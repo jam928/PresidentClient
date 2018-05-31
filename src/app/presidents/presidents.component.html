@@ -1,0 +1,29 @@
+
+<table>
+  <tr>
+  <th (click) = "sort('name')">President <i [ngClass] = "{'down': arrow === 'nameDown', 'up' : arrow === 'nameUp'}"></i></th>
+    <th (click) = "sort('birthDay')">Birthday <i [ngClass] = "{'down': arrow === 'birthDayDown', 'up' : arrow === 'birthDayUp'}"></i></th>
+    <th (click) = "sort('birthPlace')">Birthplace <i [ngClass] = "{'down': arrow === 'birthPlaceDown', 'up' : arrow === 'birthPlaceUp'}"></i></th>
+    <th (click) = "sort('deathDay')">Death Day <i [ngClass] = "{'down': arrow === 'deathDayDown', 'up' : arrow === 'deathDayUp'}"></i></th>
+    <th (click) = "sort('deathPlace')">Death Place <i [ngClass] = "{'down': arrow === 'deathPlaceDown', 'up' : arrow === 'deathPlaceUp'}"></i></th>
+  </tr>
+  
+
+  <tr *ngFor = "let president of presidents | orderBy:sortType:sortReverse">
+    <td>
+      {{president.name}}
+    </td>
+    <td>
+      {{president.birthDay}}
+    </td>
+    <td>
+      {{president.birthPlace}}
+    </td>
+    <td>
+      {{president.deathDay}}
+    </td>
+    <td>
+      {{president.deathPlace}}
+    </td>
+  </tr>
+</table>
